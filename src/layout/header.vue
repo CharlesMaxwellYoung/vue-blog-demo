@@ -9,9 +9,9 @@
                     </a>
                     <nav class="header__links">
                         <div class="container header__links-wrapper">
-                            <a class="header__link" v-for="(menu,index) in menus" :key="index" :href="menu.url">
+                            <router-link :to="menu.url" class="header__link" v-for="(menu,index) in menus" :key="index">
                                 <span>{{menu.title}}</span>
-                            </a>
+                            </router-link>
                         </div>
                     </nav>
                     <div class="header__toggle">
@@ -51,29 +51,12 @@
 
     export default {
         name: 'vHeader',
-        data() {
-            return {
-                menus: [
-                    {
-                        url: '',
-                        title: 'Home'
-                    },
-                    {
-                        url: '',
-                        title: 'About'
-                    },
-                    {
-                        url: '',
-                        title: 'Contact'
-                    }
-                ]
-            }
-        },
         components: {
             vLabel
         },
         computed: {
             ...mapState('title', {
+                menus: s => s.menus,
                 title: s => s.title,
                 data: s => s.data,
                 subtitle: s => s.subtitle,

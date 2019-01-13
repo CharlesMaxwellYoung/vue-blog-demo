@@ -16,7 +16,7 @@
       <div class="post-card__header">
         <h2>{{blogCard.title}}</h2>
         <span class="post-card__meta">
-          <time>{{blogCard.updateTime}}</time>
+          <time>{{blogCard.date}}</time>
         </span>
       </div>
       <p>{{blogCard.abstract}}</p>
